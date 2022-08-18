@@ -1,0 +1,115 @@
+$cinza-claro: #1f1f1f;
+$cinza-medio: #131313;
+$cinza-escuro: #060606;
+$azul: #058ED9;
+$branco: #F4EBD9;
+$cinza-hover: #a3a7ad;  
+$azul-hover: #5287a3;
+
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: $branco;
+    background-color: $cinza-escuro;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.header-container {
+    margin-top: 10px;
+
+    div {
+        h1 {
+            font-size: max(2vw, 18pt);
+            text-transform: uppercase;
+        }
+
+        p {
+            text-align: center;
+            font-size: max(16px, 1vw);
+        }
+    } 
+}
+
+.main-section {
+    margin: 10px 2vw;
+    padding: 20px;
+}
+
+//Calculator side
+@mixin calculatorSize($height) {
+    height: max($height, 500px);
+    width: max(calc(0.68 * $height), 340px);
+}
+
+.calculator-body {
+    @include calculatorSize(35vw);
+    background: $cinza-claro;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.visor-container {
+    background-color: $cinza-claro;
+    height: 15%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-between;
+    padding: max(10px, 1vw) 10px 10px 10px;
+
+    .visor-mini {
+        font-size: max(2vw, 20px);
+        margin-right: max(1vw, 10px);
+    }
+
+    p {
+        font-size:  max(3vw, 40px);
+        margin: 0;
+    }
+}
+
+@mixin buttonPreset($color, $hover) {
+    color: $branco;
+    background-color: $color;
+    $baseSize: 70px;
+    height: 95%;
+    width: 95%;
+    border: 0px;
+    font-size: max(2vw, 20px);
+    transition: ease-in 0.1s;
+
+    &:hover {
+        background-color: $hover;
+        color: $cinza-escuro;
+    }
+}
+
+.table-calculator {
+    width: 100%;
+    height: 75%;
+
+    tbody {
+        min-height: 500px;
+    }
+    td {
+        min-height: 100px;
+        width: 25%;
+    }
+    
+    .btn {
+        @include buttonPreset($cinza-escuro, $cinza-hover)
+    }
+
+    .btn-eq {
+        @include buttonPreset($azul, $azul-hover)
+    }
+
+    .btn-ac {
+        @include buttonPreset($cinza-medio, $cinza-hover)
+    }
+}
