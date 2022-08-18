@@ -1,16 +1,61 @@
-$cinza-claro: #1f1f1f;
-$cinza-medio: #131313;
-$cinza-escuro: #060606;
-$azul: #058ED9;
-$branco: #F4EBD9;
-$cinza-hover: #a3a7ad;  
-$azul-hover: #5287a3;
+$grey-light: #1f1f1f;
+$grey-medium: #131313;
+$grey-dark: #060606;
+$blue: #058ED9;
+$white: #F4EBD9;
+$grey-hover: #a3a7ad;  
+$blue-hover: #5287a3;
 
+//Mixins___________________________________________________________
 
+@mixin setMain($largeMode) {
+    .main-div {
+        margin: 10px 2vw;
+        width: 80%;
+        padding: 20px;
+
+        @if ($largeMode) {
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+}
+
+@mixin setDiv-Info($largeMode) {
+    div.info {
+        background-color: $white;
+        color:  black;
+        width: 90%;
+        padding: 10px;
+
+        @if ($largeMode) {
+            overflow-y: auto;
+            height: 100%;
+        }
+        @else {
+            margin-bottom: 20px;
+        }
+    }
+}
+//------------------------------------------------------
+
+//Large screen mode
+@media screen and (min-width: 980px) {
+    @include setMain(true);
+    @include setDiv-Info(true);
+}
+
+//Small screen mode
+@media screen and (max-width: 980px) {
+    @include setMain(false);
+    @include setDiv-Info(false);
+}
+
+//Both mode
 body {
     font-family: Arial, Helvetica, sans-serif;
-    color: $branco;
-    background-color: $cinza-escuro;
+    color: $white;
+    background-color: $grey-dark;
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -33,12 +78,25 @@ body {
     } 
 }
 
-.main-section {
-    margin: 10px 2vw;
-    padding: 20px;
+section {
+    display: flex;
+    justify-content: center;
 }
 
-//Calculator side
+//Info side_____________________________________________________
+div.info {
+    h1 {
+        text-align: center;
+        font-size: 2em;
+    }
+
+    p {
+        text-align: justify;
+    }
+
+}
+
+//Calculator side________________________________________________
 @mixin calculatorSize($height) {
     height: max($height, 500px);
     width: max(calc(0.68 * $height), 340px);
@@ -46,15 +104,15 @@ body {
 
 .calculator-body {
     @include calculatorSize(35vw);
-    background: $cinza-claro;
+    background: $grey-light;
     padding: 5px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
 }
 
 .visor-container {
-    background-color: $cinza-claro;
+    background-color: $grey-light;
     height: 15%;
     display: flex;
     flex-direction: column;
@@ -74,7 +132,7 @@ body {
 }
 
 @mixin buttonPreset($color, $hover) {
-    color: $branco;
+    color: $white;
     background-color: $color;
     $baseSize: 70px;
     height: 95%;
@@ -85,7 +143,7 @@ body {
 
     &:hover {
         background-color: $hover;
-        color: $cinza-escuro;
+        color: $grey-dark;
     }
 }
 
@@ -102,14 +160,14 @@ body {
     }
     
     .btn {
-        @include buttonPreset($cinza-escuro, $cinza-hover)
+        @include buttonPreset($grey-dark, $grey-hover)
     }
 
     .btn-eq {
-        @include buttonPreset($azul, $azul-hover)
+        @include buttonPreset($blue, $blue-hover)
     }
 
     .btn-ac {
-        @include buttonPreset($cinza-medio, $cinza-hover)
+        @include buttonPreset($grey-medium, $grey-hover)
     }
 }
