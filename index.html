@@ -16,46 +16,72 @@
         </div>
     </header>
 
-    <main class="main-section">
-        <section class="calculator-body">
-            <div class="visor-container">
-                <p class="visor-mini" id="visor-mini"></p>
-                <p id="visor-text">0</p>
+    <main class="main-div">
+        <section>
+            <div class="info">
+                <h1>Welcome to W10 Calculator!</h1>
+                <p>This calculator was created by <a href="">Gustavo Campos</a>, a new one software engineer.</p>
+                <p>Both the design, and display logic of this calculator are intended to look similar as possible to a calculator that you can find in every computer with Windows 10 installed.</p>
+                <p>As the original, you have either the option to click on the buttons than the option to use your keyboard to interact.</p>
+
+                <h2>Commands</h2>
+                <ul>
+                    <li>Numbers keys: Do the same thing that the number buttons.</li>
+                    <li>+ key: Sum</li>
+                    <li>- key: Subtract</li>
+                    <li>* key: Multiplicate</li>
+                    <li>/ key: Divide</li>
+                    <li>= key: Get the result</li>
+                    <li>. key: Add a point on display number</li>
+                    <li>Shift: Invert the display number</li>
+                    <li>Ctrl: Clean display number</li>
+                    <li>Back Space: Exactly what a backspace is supposed to do</li>
+                    <li>C key: Clear everything</li>
+                </ul>
             </div>
-            <table class="table-calculator">
-                <tbody>
-                    <tr>
-                        <td><button class="btn-ac" id="clear-element-btn">CE</button></td>
-                        <td><button class="btn-ac" id="clear-btn">C</button></td>
-                        <td><button class="btn-ac" id="bksp-btn">BKSP</button></td>
-                        <td><button name="op-btn" class="btn-ac">÷</button></td>
-                    </tr>
-                    <tr>
-                        <td><button name="number-btn" class="btn">7</button></td>
-                        <td><button  name="number-btn" class="btn" >8</button></td>
-                        <td><button  name="number-btn" class="btn">9</button></td>
-                        <td><button name="op-btn" class="btn-ac">x</button></td>
-                    </tr>
-                    <tr>
-                        <td><button name="number-btn" class="btn">4</button></td>
-                        <td><button name="number-btn" class="btn" >5</button></td>
-                        <td><button name="number-btn" class="btn">6</button></td>
-                        <td><button name="op-btn" class="btn-ac">-</button></td>
-                    </tr>
-                    <tr>
-                        <td><button name="number-btn" class="btn">1</button></td>
-                        <td><button name="number-btn" class="btn">2</button></td>
-                        <td><button name="number-btn" class="btn">3</button></td>
-                        <td><button name="op-btn" class="btn-ac">+</button></td>
-                    </tr>
-                    <tr>
-                        <td><button class="btn" id="invert-btn">+/-</button></td>
-                        <td><button name="number-btn" class="btn" >0</button></td>
-                        <td><button class="btn" id="decimal-btn">.</button></td>
-                        <td><button class="btn-eq" id="eq-btn">=</button></td>
-                    </tr>
-                </tbody>
-            </table>
+        </section>
+
+        <section>
+            <div class="calculator-body">
+                <div class="visor-container">
+                    <p class="visor-mini" id="visor-mini"></p>
+                    <p id="visor-text">0</p>
+                </div>
+                <table class="table-calculator">
+                    <tbody>
+                        <tr>
+                            <td><button class="btn-ac" id="clear-element-btn">CE</button></td>
+                            <td><button class="btn-ac" id="clear-btn">C</button></td>
+                            <td><button class="btn-ac" id="bksp-btn">BKSP</button></td>
+                            <td><button name="op-btn" class="btn-ac">÷</button></td>
+                        </tr>
+                        <tr>
+                            <td><button name="number-btn" class="btn">7</button></td>
+                            <td><button  name="number-btn" class="btn" >8</button></td>
+                            <td><button  name="number-btn" class="btn">9</button></td>
+                            <td><button name="op-btn" class="btn-ac">x</button></td>
+                        </tr>
+                        <tr>
+                            <td><button name="number-btn" class="btn">4</button></td>
+                            <td><button name="number-btn" class="btn" >5</button></td>
+                            <td><button name="number-btn" class="btn">6</button></td>
+                            <td><button name="op-btn" class="btn-ac">-</button></td>
+                        </tr>
+                        <tr>
+                            <td><button name="number-btn" class="btn">1</button></td>
+                            <td><button name="number-btn" class="btn">2</button></td>
+                            <td><button name="number-btn" class="btn">3</button></td>
+                            <td><button name="op-btn" class="btn-ac">+</button></td>
+                        </tr>
+                        <tr>
+                            <td><button class="btn" id="invert-btn">+/-</button></td>
+                            <td><button name="number-btn" class="btn" >0</button></td>
+                            <td><button class="btn" id="decimal-btn">.</button></td>
+                            <td><button class="btn-eq" id="eq-btn">=</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </section>
     </main>
     <script src="js/script.js"></script>
