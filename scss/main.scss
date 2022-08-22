@@ -24,7 +24,7 @@ $blue-hover: #5287a3;
 @mixin setDiv-Info($largeMode) {
     div.info {
         background-color: $white;
-        color:  black;
+        color: $grey-dark;
         width: 90%;
         padding: 10px;
 
@@ -85,13 +85,42 @@ section {
 
 //Info side_____________________________________________________
 div.info {
+        border-radius: 10px;
+        padding: 20px;
+
     h1 {
         text-align: center;
-        font-size: 2em;
+        font-size: max(2em, 3vw);
+        margin: 12px 0;
     }
 
-    p {
+    h2 {
+        margin: 10px 0;
+        text-align: center;
+        font-size: max(1.5em, 2vw);
+    }
+
+    p , ul > li {
+        font-size: max(1em, 1.5vw);
         text-align: justify;
+        padding: 0 10px;
+
+        a {
+            color: $grey-dark;
+            text-decoration: none;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+
+    li {
+        margin: 5px 0;
+    }
+
+    ul {
+        padding: 0 20px;
     }
 
 }
